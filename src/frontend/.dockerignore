@@ -1,0 +1,10 @@
+# Ignore everything first
+**
+
+# Then explicitly include what we need for standalone deployment
+!.next/standalone/**
+!package.json
+!next.config.ts
+
+# node_modules is already in standalone, so ignore the root one
+node_modules

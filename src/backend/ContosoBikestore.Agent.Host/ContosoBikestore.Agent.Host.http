@@ -1,0 +1,17 @@
+@ContosoBikestore.Agent.Host_HostAddress = http://localhost:5001
+
+### OpenAI Chat Completions API - Simple question
+POST {{ContosoBikestore.Agent.Host_HostAddress}}/ProductInventoryAgent/v1/chat/completions
+Content-Type: application/json
+
+{
+  "model": "gpt-4o",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What bikes do you have available?"
+    }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 1000
+}

@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* CopilotKit CSS Variables - Official API */
+  --copilotkit-primary-color: #2563eb;
+  --copilotkit-secondary-color: #3b82f6;
+  --copilotkit-background-color: #ffffff;
+  --copilotkit-response-button-background-color: #2563eb;
+  --copilotkit-response-button-color: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CopilotKit Custom Styling */
+
+/* Target the custom sidebar and override header */
+.custom-copilot-sidebar header,
+.custom-copilot-sidebar [class*="header"] {
+  background: #ffffff !important;
+  background-image: none !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding: 1rem 1.5rem !important;
+}
+
+/* Ensure title is visible on white background */
+.custom-copilot-sidebar h2 {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+}
+
+/* Style user messages */
+.custom-copilot-sidebar [data-role="user"],
+.custom-copilot-sidebar [class*="user"] div {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+/* Style assistant messages */
+.custom-copilot-sidebar [data-role="assistant"],
+.custom-copilot-sidebar [class*="assistant"] div {
+  background-color: #f3f4f6 !important;
+  color: #1f2937 !important;
+}
+
+/* More specific overrides for deeply nested elements */
+.custom-copilot-sidebar header > div {
+  background: transparent !important;
+}
+
+.custom-copilot-sidebar header * {
+  background-image: none !important;
+}
+
+.copilot-input-container {
+  border-top: 1px solid var(--copilot-kit-separator-color);
+  padding: 1rem;
+  background: var(--copilot-kit-background-color);
+}
+
+.copilot-input {
+  border: 2px solid var(--copilot-kit-separator-color);
+  border-radius: var(--copilot-kit-response-button-border-radius);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.copilot-input:focus {
+  border-color: var(--copilot-kit-primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.copilot-send-button {
+  background: var(--copilot-kit-primary-color);
+  color: white;
+  border-radius: var(--copilot-kit-response-button-border-radius);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.copilot-send-button:hover {
+  background: var(--copilot-kit-secondary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.copilot-send-button:active {
+  transform: translateY(0);
+}
